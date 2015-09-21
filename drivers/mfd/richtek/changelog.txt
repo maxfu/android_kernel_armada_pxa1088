@@ -1,0 +1,53 @@
+--v1.2.1 -- 2013/5/21
+--Maintenance Man : Patrick Chang <patrick_chang@richtek.com>
+Bug fix for Dock accessory detection of RT8973REV1
+Change GPIO debounce time to be 1ms
+Integration of Logan-LTE's source code
+--v1.2.0 -- 2013/5/14
+--Maintenance Man : Patrick Chang <patrick_chang@richtek.com>
+Compatibility improvement of accessory detection for some slow machine
+Add FSA9480 compatibile mode (for almost all interfaces and export symbol)
+Change initialization flow (1. reset 2.write init value 3. register system int 4. enable rt8973 int pin)
+Add rt8973_reset callback function
+Remove resume() / suspend()
+--v1.1.9 -- 2013/4/27
+--Maintenance Man : Patrick Chang <patrick_chang@richtek.com>
+Bug fix of retry_i2c_smbus_write_byte_data()/retry_i2c_smbus_read_byte_data()
+(Use I2C_RW_RETRY_MAX instead of I2C_RW_RETRY_DELAY)
+Change I2C_RW_RETRY_DELAY to 20 (ms)
+--v1.1.8 -- 2013/4/18
+--Maintenance Man : Patrick Chang <patrick_chang@richtek.com>
+Fix RT8973 REV0 INT bounce issue 
+(use #define EN_REV0_INT_BOUNCE_FIX 1
+to enable this function)
+--v1.1.7 -- 2013/4/17
+--Maintenance Man : Patrick Chang <patrick_chang@richtek.com>
+Add item of device lookup table (+OTG)
+Change DCT_T retry times to 2
+Add support for detection of TA-like charger (ID = 180k/200k, ignore D+/D- check)
+--v1.1.6 -- 2013/4/16
+--Maintenance Man : Patrick Chang <patrick_chang@richtek.com>
+Add support for charging function of Samsung Desk Dock/Smart Hub Dock/Audio dock
+Disable function of I2C timeout reset
+Add OTG detection function for REVISION ID >= 0x01
+Change DCD_T retry times to 1
+--v1.1.5 -- 2012/10/23
+--Maintenance Man : Patrick Chang <patrick_chang@richtek.com>
+Add support for RT9450B charger
+--v1.1.4 -- 2012/10/18
+--Maintenance Man : Patrick Chang <patrick_chang@richtek.com>
+Add support for RT9450 charger
+--v1.1.3 -- 2012/09/18
+--Maintenance Man : Patrick Chang <patrick_chang@richtek.com>
+Add support for RT9524 charger
+Add support for RT8973 muic
+--v1.1.2-- 2012/06/27
+--Maintenance Man : Patrick Chang <patrick_chang@richtek.com>
+Compatibility improve
+Add support for Dialog D2083 PMIC
+--v1.0.5-- 2012/04/15
+--Maintenance Man : Patrick Chang <patrick_chang@richtek.com>
+Move to "drivers/mfd/richtek"
+Compatibility improve
+Add RT9450 switch chargaer support
+

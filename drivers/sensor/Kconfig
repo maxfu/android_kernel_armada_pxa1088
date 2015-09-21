@@ -1,0 +1,34 @@
+#
+# Sensor  drivers configuration
+#
+config SENSOR_DIR
+	tristate "Sensors core of sensor folder"
+	default n
+	help
+	  Say Y here to enable debugging messages for power supply class
+	  and drivers.
+
+config SENSORS_BMA254
+	tristate "BMA254 Acceleration Sensor Driver"
+	depends on I2C
+	default n
+	help
+	  If you say yes here you get support for Bosch-Sensortec's
+	  BMA254 Acceleration Sensor.
+
+config INPUT_BMA254_ACC_ALERT_INT
+	tristate "BMA254 acceleration sensor motion support"
+	depends on SENSORS_BMA254
+	default n
+	help
+	  If you say yes here you get support for Bosch Sensortec's 
+	  acceleration sensors BMA254 Motion support.	
+
+config SENSORS_TAOS
+	depends on I2C
+	tristate "TAOS driver"
+	default n
+	help
+	  If you say yes here you get support for TAOS's
+	  TMD27723 proximity & light sensor using taos driver.
+
